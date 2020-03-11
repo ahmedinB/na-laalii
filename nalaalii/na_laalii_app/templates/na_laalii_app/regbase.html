@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <style>
+        li{
+            margin:0;
+            color: black;
+        }
+        li:hover{
+            color: rgb(60, 110, 60);
+            text-decoration:none;
+        }
+        nav li{
+            display:inline-block;
+            padding: 1rem;
+            margin:0;
+            color: white
+        }
+        nav li:hover{
+            text-underline-position: below;
+            background-color:rgb(10, 50, 10);
+            color:#eeeeee;
+            text-decoration:underline;
+        }
+        ul,ol{
+            list-style-type:none;
+        }
+        footer{
+            padding-bottom: 2%;clear: both;
+            color:#d5d5d5;
+        }
+        footer a{
+            color:#d5d5d5;
+        }
+        footer a:hover{
+            color:#d5d5d5;
+            text-decoration: underline;
+        }
+        body{
+            margin:0px;
+            padding: 0px;
+        } 
+	    footer hr{
+	        border-top: 1px solid #d5d5d5;
+	    }
+        .name, .red, .pas, .sub, .pno, .email{
+            padding:5px;margin: 5px;
+        }
+        input{
+            display: inline-block
+        }
+        .title{
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="container-fluid" style="background-color: #eeeeee">
+        <div class="container">
+            <img src="{{brand.logo.url}}" alt="logo" style="height:5rem;width:5rem;">
+            <strong style="display:inline-block;color: rgb(60, 110, 60);font-size: 1.5rem;" class="">Na Laalii</strong>                
+        </div>
+    </header>
+    <nav class="container-fluid  hidden-xs" style="background-color: rgb(60, 110, 60);">
+        <div class="container" style="padding: 0%;background-color: #eeeeee;">
+            <ul style="list-style: none;background-color: rgb(60, 110, 60);margin: 0%;padding: 0%;border-bottom:1px solid rgb(60, 110, 60);">
+                <a href="/home/"><li>HOME</li></a>
+                <a href="/top/"><li>TOP</li></a>
+                <a href="/new/"><li>NEW</li></a>
+                <a href="/categories/"><li>CATEGORIES</li></a>
+                <a href="/registration/"  style="float: right;"><li class="registration" >REGISTER/LOGIN</li></a>
+            </ul>
+        </div>
+
+    </nav>
+    <div class="container">
+        {% block content %}
+
+
+        {% endblock %} 
+          
+    </div>
+
+
+    <footer style="background-color:#3f3f3f;" class="container-fluid">
+        <div style="margin: 10px;" align=center>
+            <span > <a href="/home/">home</a></span>
+
+
+        </div>
+
+        <div style="margin: 10px;" align=center>
+            lang:    <span style="margin: 10px;">Afaan Oromoo</span><span style="margin: 10px;";>English</span><span style="margin: 10px;";>Amharic</span>
+        </div>
+        <div style="margin: 10px;" align=center>
+            <span style="margin: 10px;"> <a href="/feedback/">Feedback</a></span><span style="margin: 10px;"> <a href="/aboutus">about us</a></span>
+            <span style="margin: 10px;"> <a href="/questions/">FAQ</a></span>
+        </div>
+        <div class="thanks" align=center>
+            thank you for using our site
+        </div>
+        <hr class="my-3">
+        <div align=center>copy right protected &copy; 2019 nalaalii corp</div>
+
+
+    </footer>
+
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+</body>
+</html>

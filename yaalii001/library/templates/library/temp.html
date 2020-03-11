@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+    <script src="main.js"></script>
+    <style>
+
+       
+        li{
+            display:inline;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <header class='container-fluid '>
+    	<div class='container'>
+    		<h1 >nalaalii library</h1>
+    	</div>
+    <div class="whitebody">
+
+
+
+    </div>
+    </header>
+    <div class="red" >
+        <ul>
+            <li>contact us</li>
+            <li>more</li>
+            <li><a href="comment">comment</a></li>
+
+            
+        </ul>
+        {% for img in img %}
+            <a href="/proj/detail/{{img.id}}">
+                <h2>{{img.bookname}} </h2>
+                <h2>{{img.book}} </h2>
+                <img src="{{img.bookimg.url}}" alt="" width="280" style="width:280px;">            
+            </a>
+
+
+        {% endfor %}
+    </div>
+
+</body>
+</html>

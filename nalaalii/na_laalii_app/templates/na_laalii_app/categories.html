@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>categories</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script src="main.js"></script>
+    <style>
+        .categories{
+            text-underline-position: below;
+            background-color:rgb(10, 50, 10);
+            color:#eeeeee;
+            text-decoration:underline;
+        }
+        body{
+            margin:0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+
+      {% extends 'na_laalii_app/base.html' %}
+    {% block content %}
+    <section class="container-fluid">
+        <div class="my-2"></div>
+		<div class="container-fluid row jumbotron">
+			<div class="container my-4  col-lg-6 col-md-12 " style="position:relative;">
+				<h3 class="container">Google map API feature</h3>
+				<p>we are currently working on improving our site. One of which is achieved by embedding google map on it so that we could make the location more detailed and easy to access.</p>
+				<div style="position:absolute;top:0;right:1%;background-color:red;color:white;padding:1%;border-radius:0%;">coming soon</div>
+			</div>
+			<iframe class="col-lg-6 col-md-12" src="http://127.0.0.1:8000/home/" style="height:15em;">
+
+			</iframe>
+		</div>
+        
+        <h3 class="container my-3">Categories</h3>
+        <hr class="hr">
+        <div class="container">
+            <div class="row paddig">
+                <div  class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-6 my-1 ">
+                	<a href="/categories/rooms/">
+	                    <button class="btn btn-outline-secondary">
+	                        <h3>No. Of Rooms</h3>
+	                        <p>how many rooms do you prefer?</p>
+	                    </button>
+                    </a>
+                </div>
+                <div  class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-6 my-1 ">
+                	<a href="/categories/where/">
+	                    <button class="btn btn-outline-secondary">
+	                        <h3>Location</h3>
+	                        <p>where do you want your place to be?</p>
+	                    </button>
+                    </a>
+                </div>
+
+                <div  class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-6 my-1 ">
+                	<a href="/categories/sales/">
+	                    <button class="btn btn-outline-secondary">
+	                        <h3>Sales</h3>
+	                        <p>we have houses for sale,need one?</p>
+	                    </button>
+                    </a>
+                </div>
+                <div  class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-6 my-1 ">
+                	<a href="/categories/office/">
+	                    <button class="btn btn-outline-secondary">
+	                        <h3>Office</h3>
+	                        <p>if you need rooms for official purpose...</p>
+	                    </button>
+                    </a>
+                </div>
+                
+
+          <!--      <div  class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-6 my-1 ">
+                	<a href="/categories/where/">
+	                    <button class="btn btn-outline-secondary">
+	                        <h3>Sales</h3>
+	                        <p>we have houses for sale,need one?</p>
+	                    </button>
+                    </a>
+                </div>
+
+                <div  class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-6 my-1 ">
+                	<a href="/categories/where/">
+	                    <button class="btn btn-outline-secondary">
+	                        <h3>Sales</h3>
+	                        <p>we have houses for sale,need one?</p>
+	                    </button>
+	                </a>
+                </div>
+-->
+
+                <div  class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-6 my-1 ">
+                	<a href="/categories/cost/">
+	                    <button class="btn btn-outline-secondary">
+	                        <h3>Cost</h3> <span class="caret"></span>
+	                        <p> up to 1000  ,  1000-2500  ,  2500-4000  ,  above 4000</p>
+	                    </button>
+	                </a>
+                </div>  
+                <div  class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-6 my-1 ">
+                	<a href="/categories/student/">
+	                    <button class="btn btn-outline-secondary">
+	                        <h3>Student</h3>
+	                        <p>if you are student visit our cost effective choises</p>
+	                    </button>
+	                </a>
+                </div>
+                <div  class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-6 my-1 ">
+                	<a href="/categories/family/">
+	                    <button class="btn btn-outline-secondary">
+	                        <h3>Family houses</h3>
+	                        <p>we have houses for sale,need one?</p>
+	                    </button>
+	                </a>
+                </div>
+            </div>
+
+        </div>
+
+	     
+    </section>
+    {% endblock %}  
+ 
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+</body>
+</html>

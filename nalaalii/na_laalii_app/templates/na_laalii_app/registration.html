@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <style>
+
+        body{
+            margin:0px;
+            padding: 0px;
+        }
+
+        .registration{
+            text-underline-position: below;
+            background-color:rgb(10, 50, 10);
+            color:#eeeeee;
+            text-decoration:underline;
+        }
+
+        input{
+            display: inline-block
+        }
+    </style>
+</head>
+<body>
+    {% extends 'na_laalii_app/base.html' %}
+
+    {% block content %}
+    <div class="container">
+
+
+    <div class=" container padding row">
+        <section class="alert my-4 alert-warning col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <h4> * notices </h4>
+          <p>1, try to keep your account password secure as other people could damage your profile knowingly or by mistake</p>
+        </section>
+        <section class="col-xs-12 col-sm-12 col-lg-6 card padding" >
+            <span >
+                <form action="/My_Account/login/"  method="POST" name="login" >
+                    {% csrf_token %}
+                    <div class="title">
+                        <strong>LOGIN</strong>
+                    </div>
+
+
+                    <div class="name">
+                        name <input type="text" name="q" id="name" placeholder="">
+                    </div>
+                    <div class="pas">
+                        password <input type="password" name="password" id="password" placeholder="">
+                    </div>
+                    <div class="sub">
+                        <input type="submit" name="login" value="login">
+                    </div>
+                </form>
+            </span>
+
+        </section>
+        <section class="col-sm-12 col-lg-6 card padding" >
+            <form action="/registered/"  method="POST" name="register" style=" ">
+                {% csrf_token %}
+                <div class="title">
+                    <strong>REGISTER</strong>
+                </div>
+
+                <div class="name">
+                    name <input type="text" name="name" id="name" placeholder="">
+                </div>
+                <div class="rad">
+                    <input type="radio" name="" id="" >
+                </div>
+                <div class="email">
+                    email <input type="email" name="email" id="email" placeholder="">
+                </div>
+                <div class="pno">
+                    phone number <input type="number" name="pno" id="pno" placeholder="">
+                </div>
+                <div class="pas">
+                    password <input type="password" name="pas1" id="password" placeholder="">
+                </div>
+                <div class="pas">
+                    confirm password <input type="password" name="pas2" id="password" placeholder="">
+                </div>
+                <div class="sub">
+                    <input type="submit" value="register"  name="register">
+                </div>
+            </form>
+
+        </section>
+
+    </div>
+    </div>
+    {% endblock %}
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>new</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+    <script src="main.js"></script>
+    <style>
+        .new{
+            text-underline-position: below;
+            background-color:rgb(10, 50, 10);
+            color:#eeeeee;
+            text-decoration:underline;
+        }
+
+        body{
+            margin:0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    {% extends 'na_laalii_app/base.html' %}
+    {% block content %}
+    <section>
+        <h3 class="container my-3">New</h3>
+        <hr class="container hr">
+        <ul class="listul row" style="margin:5px;">
+            {%for new in new %}
+                <a href="/new/detail/?id={{new.id}}" class="my-1 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+                    <li class ="card" style="height:100%;">
+                    <img src="{{new.frontal_picture.url}}" class="card-img-top" style="width: 100%;height:70%">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <article>{{new.description}}</article><article style=''>price: {{new.cost}}</article>
+
+                        </div>
+                    </div>
+                    
+                    </li>
+                </a>
+
+                
+    
+            {%endfor%}
+        </ul>
+    </section>
+    {% endblock %}
+<!--   <footer style="background-color:#cacaca;">
+        <div style="margin: 10px;" align=center>
+            <span > <a href="/registration/">register/login</a></span>
+
+
+        </div>
+        <div style="margin: 10px;" align=center>
+            lang:    <span style="margin: 10px;">Afaan Oromoo</span><span style="margin: 10px;";>English</span><span style="margin: 10px;";>Amharic</span>
+        </div>
+        <div style="margin: 10px;" align=center>
+            <span style="margin: 10px;"> <a href="/feedback/">Feedback</a></span><span style="margin: 10px;"> <a href="/aboutus">about us</a></span>
+            <span style="margin: 10px;"> <a href="/questions/">FAQ</a></span>
+        </div>
+        <div class="thanks" align=center>
+            thank you for using our site
+        </div>
+
+
+    </footer>
+
+--> 
+</body>
+</html>

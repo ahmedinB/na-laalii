@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="head">
+        <header>
+            <div class="dropdown">
+                <button class="dropdownbutton"> <h1>Na Laalii Products</h1></button>
+                <div class="dropdown-content">
+                    <a href="">betoch</a>
+                    <a href="">library</a>
+                    <a href="">so on</a>
+                </div>
+            </div>
+            
+        </header>
+
+        <nav>
+            <ul>
+                <li> <a href="">Home</a> </li>
+                <li><a href="">Top</a></li>
+                <li><a href="">New</a></li>
+                <li><a href="">Categories</a></li>
+                <li style="float:right;margin-right: 5px"><a href="">Register/Login</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <section class="top">
+        <h3>top</h3>
+
+        <!--<ol>
+            {% for top in top %}
+                <li>
+                    <h4>{{top.title}}</h4>
+                    <img height="15%" width="20%"  src="{{top.img.url}}" alt="{{top.title}}">
+                    <span>{{top.address}}</span><span>{{top.cost}}</span>
+                </li>
+               
+            {% endfor %}
+        </ol>-->
+        <ol>
+            <li class="sample" style="display: inline-block;" >
+                <img src="4k-wallpaper-architecture-background-1308624 - Copy.jpg" height="15%" width="20%" alt="sample img">
+                <br>
+                <span class="left">fukccc</span> <span class="right">488</span>
+            </li>  
+            <li class="sample" style="display: inline-block;">
+                <img src="4k-wallpaper-architecture-background-1308624 - Copy.jpg" height="15%" width="20%" alt="sample img">
+                <br>
+                <span class="left">fukccc</span> <span class="right">488</span>
+            </li>
+                        
+        </ol>
+        
+        <iframe src="http://www.google.com/maps?z" frameborder="0"></iframe>
+    </section>
+    <aside class="advert/news">
+        <ol>
+            {% for advert in advert %}
+                <li>
+                    <a href=""> {{advert.pic}} <br> {{advert.title}} </a>
+                </li>
+            {% endfor %}
+        </ol> 
+
+    </aside>
+    <footer>
+
+    </footer>
+</body>
+</html>

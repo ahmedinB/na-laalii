@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>edit | {{asset.description}}</title>
+    <style>
+    .right{
+        float: right;
+    }
+    .margin{
+        
+    }
+    [class*="col-"]{
+        padding:0rem;
+    }
+    footer{
+        padding-bottom: 2%;clear: both;
+        color:#d5d5d5;
+    }
+    footer a{
+        color:#d5d5d5;;
+    }
+    footer a:hover{
+        color:#d5d5d5;
+        text-decoration: underline;
+    }
+    footer hr{
+        border-top: 1px solid #d5d5d5;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light sticky-top container-fluid page-header " style="background-color:#eeeeee;box-shadow:  0 0 10px #777777;">
+        <div class="container-fluid">
+            <div class="container">
+                <a href="/home/"><img src="/static/img/logo.jpg" style="height: 3rem;width:3rem;"></a>
+                <div style="color:rgb(60, 110, 60);"  class="navbar-brand text-center padding" ><strong  > Na Laalii</strong></div>
+                <span style="font-size:x-large">| {{user.full_name}}  </span><a  style="color:#ff6600" href="/My_Account/logout/">logout</a>
+               <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
+                
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="navbar-item">
+                            {{user.full_name}}
+
+                        </li>
+
+                    </ul>
+
+                </div>   -->             
+            </div>
+
+            
+
+        </div>
+    </nav>
+    <section class="container-fluid">
+        <div class="container my-3">
+        	<h4>preveiw</h4>
+            <div class="container row">
+                <div class="col-sm-12 col-md-6 padding">
+                    <div class="container my-1">
+                        <img src="{{asset.frontal_picture.url}}" style="width: 100%;height:100%;" >
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 padding">
+                    <div class="container my-1">
+                        <img src="{{asset.photo_from_inside.url}}" alt="" style="width: 70%;height:50;">
+                        <p>{{asset.description}}</p>
+                        <p><address>address: {{asset.word_address}}</address></p>
+                        <p>price: {{asset.cost}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+	    </section>
+        <div class="container-fluid  " >
+	        <div class="container-fluid padding jumbotron" >
+	            <div class="container padding " >    <br>
+	                <form action="/My_Account/edit_asset/{{asset.description}}/" method="post" enctype="multipart/form-data">{% csrf_token %} 
+	                	<h5 class="container">Edit {{asset.description}}</h5>
+	                    <div class="container-fluid form-row field-description">          
+	                        <div >                    
+	                            <label class="required" for="id_description">Description:</label>                       
+	                            <input name="description" class="vTextField" value={{asset.description}} id="id_description" required="" type="text" maxlength="200">                   
+	                        </div>          
+	                    </div>   
+	              <!--      <div class="form-row field-mapp_address container-fluid">           
+	                        <div>                   
+	                            <label class="required" for="id_mapp_address">Mapp address:</label>
+	                            <input name="mapp_address" id="id_mapp_address" value={{asset.mapp_address}} required="" type="file" accept="image/*">               
+	                        </div>
+	                    </div>  -->
+	                    <div class="form-row field-cost container-fluid">         
+	                        <div>                
+	                            <label class="required" for="id_cost">Cost:</label>                      
+	                            <input name="cost" class="vIntegerField" id="id_cost" value={{asset.cost}} required="" type="number">                 
+	                        </div>           
+	                    </div>   
+	                    <div class="form-row field-frontal_picture container-fluid">          
+	                        <div>                
+	                            <label class="required" for="id_frontal_picture">Frontal picture:</label><p>current- {{asset.frontal_picture}}</p>
+	                            <input name="frontal_picture" id="id_frontal_picture" required="" type="file" accept="image/*">           
+	                        </div>        
+	                    </div>
+	                    <div class="form-row field-word_address container-fluid">         
+	                        <div>                 
+	                            <label class="required" for="id_word_address">Word address:</label>                       
+	                            <input name="word_address" class="vTextField" id="id_word_address" value={{asset.word_address}} required="" type="text" maxlength="150">
+	                        </div>
+	                    
+	                    </div>
+	                
+	                    <div class="form-row field-no_of_rooms container-fluid">
+	                        <div>
+	                            <label class="required" for="id_no_of_rooms">No of rooms:</label>
+	                            <input name="no_of_rooms" class="vIntegerField" id="id_no_of_rooms" value={{asset.no_of_rooms}} required="" type="number">                
+	                        </div>
+	                    </div>
+	                
+	                    <div class="form-row field-photo_from_inside container-fluid">        
+	                        <div>
+	                            <label class="required" for="id_photo_from_inside">Photo from inside:</label>
+	                                
+	                            <input name="photo_from_inside" id="id_photo_from_inside" required="" type="file" accept="image/*">                                      
+	                        </div>           
+	                    </div>    
+	                    <div class="form-row field-rooms_in_birdeye container-fluid">                       
+	                        <div>                                     
+	                            <label class="required" for="id_rooms_in_birdeye">Rooms in birdeye:</label>                      
+	                            <input name="rooms_in_birdeye" id="id_rooms_in_birdeye" required="" type="file" accept="image/*">                                                             
+	                        </div>            
+	                    </div>  
+	                    <br>	    
+	         	
+	                </form>
+	            </div>
+
+	        </div>
+
+	    </div>
+     	<div class="container my-3">
+	        <div class="btn-group btn-block row" align="left">
+	            <a href="delete/" class="col-xs-12 col-sm-4"><button style="width:100%;" class="btn btn-outline-danger">Delete</button></a>
+	            <a href="/My_Account/" class="col-xs-12 col-sm-4"><button style="width:100%;" class="btn btn-outline-primary">Go Back</button></a>   
+	            <a href=""  class="col-xs-12 col-sm-4"><button type="submit" style="width:100%;" class="btn btn-outline-success">Save Changes</button></a>    
+	        </div>        
+	    </div>
+    <footer style="background-color:#3f3f3f;" class="container-fluid">
+        <div style="margin: 10px;" align=center>
+            <span > <a href="/home/">home</a></span>
+
+
+        </div>
+        <div style="margin: 10px;" align=center>
+            lang:    <span style="margin: 10px;">Afaan Oromoo</span><span style="margin: 10px;";>English</span><span style="margin: 10px;";>Amharic</span>
+        </div>
+        <div style="margin: 10px;" align=center>
+            <span style="margin: 10px;"> <a href="/feedback/">Feedback</a></span><span style="margin: 10px;"> <a href="/aboutus">about us</a></span>
+            <span style="margin: 10px;"> <a href="/questions/">FAQ</a></span>
+        </div>
+        <div class="thanks" align=center>
+            thank you for using our site
+        </div>
+        <hr class="my-3">
+        <div align=center>copy right protected &copy; 2019 nalaalii corp</div>
+
+
+    </footer>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+</body>
+</html>

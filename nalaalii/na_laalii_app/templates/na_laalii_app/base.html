@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <style>
+
+        nav li{
+            font-family: ;
+            display:inline-block;
+            padding: 1rem;
+            margin:0rem;
+            color: white;
+        }
+        nav li:hover{
+            text-underline-position: below;
+            background-color:rgb(10, 50, 10);
+            color:#eeeeee;
+            text-decoration: underline;
+        }
+        section li{
+
+            margin:0;
+            color:rgb(60, 110, 60);
+        }
+        section li:hover{
+            text-underline-position: below;
+            background-color:rgb(60, 110, 60);
+            color:#eeeeee ;
+
+        }
+        ul,ol{
+            list-style-type:none;
+        }
+
+        footer{
+            padding-bottom: 2%;clear: both;
+            color:#d5d5d5;
+        }
+        footer a{
+            color:#d5d5d5;;
+        }
+        footer a:hover{
+            color:#d5d5d5;
+            text-decoration: underline;
+        }
+        body{
+            margin:0px;
+            padding: 0px;
+        }
+	    footer hr{
+	        border-top: 1px solid #d5d5d5;
+	    }
+        .name, .red, .pas, .sub, .pno, .email{
+            padding:5px;margin: 5px;
+        }
+        input{
+            display: inline-block;
+        }
+        .title{margin: 10px;}
+        .hr{border-top: 1px solid rgb(60, 110, 60);
+            color: rgb(60, 110, 60;)}
+        .btn-outline-secondary{
+            border: 1px solid rgb(60, 110, 60);
+        }
+        .cright{text-align:right;font-weight:bold;}
+        footer{padding:2rem;}
+    </style>
+</head>
+<body>
+
+    <header class="container-fluid" style="background-color: #eeeeee">
+        <div class="container">
+            <img src="{{brand.logo.url}}" alt="logo" style="height:5rem;width:5rem;">
+            <strong style="display:inline-block;color: rgb(60, 110, 60);font-size: 1.5rem;" class="">Na Laalii</strong>
+        </div>
+    </header>
+    <nav class="container-fluid well  " style="background-color: rgb(60, 110, 60);">
+        <div class="container hidden-xs" style="padding: 0%;">
+            <ul style="list-style: none;background-color: rgb(60, 110, 60);margin: 0%;padding: 0%;">
+                <a href="/home/"><li class="home">HOME</li></a>
+                <a href="/news/"><li class="news">NEWS</li></a>
+                <a href="/gojo/"><li class="gojo">GOJO</li></a>
+                <a href="/services/"><li class="services">SERVICES</li></a>
+                <a href="/about_us/"style="float: right;"><li  class="aboutus" >about us</li></a>
+            </ul>
+        </div>
+
+    </nav>
+    <div class="container-fluid">
+        {% block content %}
+
+
+        {% endblock %}
+    </div>
+
+
+    <footer style="background-color:#3f3f3f;" class="container-fluid row">
+        <div style="margin: 10px;" class="col-md-2 col-sm-6 container">
+          {% if "registration" in request.path %}
+            <span > <a href="/home/">home</a></span>
+          {% else%}
+            <span > <a href="/registration/">register/login</a></span>
+          {% endif %}
+
+        </div>
+        <div style="margin: 10px;" class="col-md-2 col-sm-6col-md-3 col-sm-6 container">
+            lang:   <br> <span style="margin: 10px;">Afaan Oromoo</span><br>
+            <span style="margin: 10px;";>English</span><br><span style="margin: 10px;";>Amharic</span>
+        </div>
+        <div style="margin: 10px;" class="col-md-2 col-sm-6 container">
+            <span style="margin: 10px;"> <a href="/feedback/">Feedback</a></span> <br>
+            <span style="margin: 10px;"> <a href="/aboutus">about us</a></span> <br>
+            <span style="margin: 10px;"> <a href="/questions/">FAQ</a></span>
+        </div>
+        <div class="thanks" class="col-md-2 col-sm-6 container">
+            <p class="container">thank you for using our site</p>
+        </div>
+        <hr class="my-3">
+        <div class="cright col-xs-12 col-sm-12 container" >copy right protected &copy; 2019 nalaalii corp</div>
+
+
+    </footer>
+
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+</body>
+</html>
